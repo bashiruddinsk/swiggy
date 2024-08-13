@@ -1,0 +1,77 @@
+/* Container to center the form on the page */
+.login-container {
+    display: flex;
+    justify-content: center;   /* Center horizontally */
+    align-items: center;       /* Center vertically */
+    height: 100vh;             /* Full viewport height */
+    background-color: #f0f0f0; /* Light grey background */
+  }
+  
+  /* Style the form */
+  form {
+    background-color: #ffffff;  /* White background for the form */
+    padding: 2rem;              /* Padding inside the form */
+    border-radius: 8px;         /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    width: 100%;
+    max-width: 400px;           /* Maximum width of the form */
+    display: flex;
+    flex-direction: column;     /* Stack the form elements vertically */
+  }
+  
+  /* Style the labels */
+  label {
+    font-weight: 600;          /* Slightly bold font */
+    margin-bottom: 0.5rem;     /* Space below the label */
+    color: #333333;            /* Dark grey color */
+  }
+  
+  /* Style the input fields */
+  input[type="text"],
+  input[type="password"] {
+    padding: 0.75rem;           /* Padding inside the input */
+    margin-bottom: 1rem;        /* Space below each input */
+    border: 1px solid #cccccc;  /* Light grey border */
+    border-radius: 4px;         /* Slightly rounded corners */
+    font-size: 1rem;            /* Set font size */
+    color: #333333;             /* Text color */
+    background-color: #f9f9f9;  /* Light background */
+  }
+  
+  /* Style the buttons */
+  button {
+    padding: 0.75rem;          /* Padding inside the button */
+    border: none;              /* Remove default border */
+    border-radius: 4px;        /* Slightly rounded corners */
+    font-size: 1rem;           /* Set font size */
+    cursor: pointer;           /* Change cursor to pointer */
+    margin-bottom: 0.5rem;     /* Space between buttons */
+  }
+  
+  /* Style the login button */
+  button[type="submit"] {
+    background-color: #4caf50;  /* Green background */
+    color: #ffffff;             /* White text */
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;  /* Darker green on hover */
+  }
+  
+  /* Style the register button */
+  button[type="button"] {
+    background-color: #008cba;  /* Blue background */
+    color: #ffffff;             /* White text */
+  }
+  
+  button[type="button"]:hover {
+    background-color: #007bb5;  /* Darker blue on hover */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    form {
+      padding: 1.5rem;  /* Reduce padding for smaller screens */
+    }
+  }
+  
