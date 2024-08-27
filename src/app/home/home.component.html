@@ -1,1 +1,44 @@
-<p>home works!</p>
+<app-search></app-search>
+<app-tags></app-tags>
+<ul>
+    <li *ngFor="let food of foods">
+      <a routerLink="/food/{{food.id}}">
+        <img src="{{food.imageUrl}}" alt="food images">
+        <div class="content">
+          <div class="name">
+            {{food.name}}
+          </div>
+          <span class="favorite {{food.favorite ? '' : 'not'}}">
+            <mat-icon>favorite</mat-icon>
+          </span>
+          <!-- Full stars -->
+        <mat-icon *ngFor="let star of getFullStars(food.star)" class="star-filled">
+            star
+          </mat-icon>
+          <!-- Half star -->
+          <mat-icon *ngIf="hasHalfStar(food.star)" class="star-half">
+            star_half
+          </mat-icon>
+          <!-- Empty stars -->
+          <mat-icon *ngFor="let empty of getEmptyStars(food.star)" class="star-empty">
+            star_border
+          </mat-icon>
+          <div class="product-item-footer">
+            <div class="origins">
+              <span *ngFor="let origin of food.origins">
+                {{origin}}
+              </span>
+            </div>
+            <div class="cook-time">
+              <mat-icon>schedule</mat-icon> 
+              {{food.cookTime}}
+            </div>
+            <div class="price">
+              {{food.price | currency}}
+            </div>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+  

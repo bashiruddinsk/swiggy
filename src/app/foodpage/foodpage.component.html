@@ -1,0 +1,58 @@
+<div class="container">
+    <img [src]="food.imageUrl" alt="food.name">
+</div>
+
+<div class="details">
+    <div class="header">
+        <span class="name">
+            {{food.name}}
+        </span>
+        <span class="favorite {{food.favorite?'':'not'}}">
+
+            <mat-icon>favorite</mat-icon>
+        </span>
+    </div>
+
+
+      <div class="star">
+               <!-- Full stars -->
+        <mat-icon *ngFor="let star of getFullStars(food.star)" class="star-filled">
+            star
+          </mat-icon>
+          <!-- Half star -->
+          <mat-icon *ngIf="hasHalfStar(food.star)" class="star-half">
+            star_half
+          </mat-icon>
+          <!-- Empty stars -->
+          <mat-icon *ngFor="let empty of getEmptyStars(food.star)" class="star-empty">
+            star_border
+          </mat-icon>
+
+      </div>
+
+      <div class="origins">
+        <span *ngFor="let origin of food.origins">
+            {{origin}}
+        </span>
+      </div>
+
+      <div class="tag">
+        <app-tags [foodPageTags]="food.tags" justifyContent="start"></app-tags>
+      </div>
+
+      <div class="cook-time">
+        <span>
+            Time to cook about <strong>{{food.cookTime}}</strong> Minutes
+        </span>
+      </div>
+      <div class="price">
+        <span>
+            {{food.price| currency}}
+        </span>
+      </div>
+
+      <button (click)="addToCart()">Add to Cart</button>
+
+
+
+</div>
